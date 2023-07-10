@@ -20,8 +20,8 @@ def plot_annotate(ax, title):
                 xytext=(0, 1), textcoords="offset points")
     ax.set_title(title)
 
-def churn_by_variable(dataframe, option):
-    fig, ax = plt.subplots(figsize=(10, 6))
+def churn_by_variable(dataframe, option, size=(10, 6)):
+    fig, ax = plt.subplots(figsize=size)
     sns.countplot(x=option, data=dataframe, palette="viridis", hue="Churn")
     plot_annotate(ax, option)
 
