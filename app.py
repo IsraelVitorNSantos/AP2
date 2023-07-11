@@ -63,7 +63,7 @@ option_variavel = ('gender', 'SeniorCitizen', 'Partner', 'Dependents')
 categoria_churn_by_variable = st.sidebar.selectbox('Selecione o grupo para apresentar no gráfico', options = option_variavel)
 st.write('## Análise de Churn por Variáveis')
 st.write('Filtragem por: ' + ', '.join(option_variavel))
-st.pyplot(churn_by_variable(dados, categoria_churn_by_variable))
+st.pyplot(churn_by_variable(dados, categoria_churn_by_variable, hue="Churn"))
 st.write('Comparação da proporção de churn entre diferentes grupos formados pelas variáveis de: gender (gênero), SeniorCitizen (indicador de idoso), Partner (indicador de parceiro) e Dependents (indicador de dependentes).')
 
 # Gráfico: Análise de Churn por Serviços inscritos
@@ -77,7 +77,7 @@ st.write('Ocorrência de churn para diferentes serviços: PhoneService (serviço
 
 # Gráfico: Meses de Permanência
 st.write('## Meses de permanência')
-st.pyplot(churn_by_variable(dados, 'tenure', (40, 12)))
+st.pyplot(churn_by_variable(dados, 'tenure', (40, 12), hue="Churn"))
 st.write('Presença de churn em relação ao tempo de permanência dos clientes. Essa análise ajuda a identificar tendências sazonais ou oportunidades de melhoria na retenção de clientes ao longo do tempo, permitindo que as empresas ajustem suas estratégias para reduzir o churn e promover a fidelidade dos clientes.')
 
 # Gráfico: Distribuição dos dados
