@@ -72,7 +72,7 @@ option_servicos = ('PhoneService', 'MultipleLines', 'InternetService', 'OnlineSe
 categoria_churn_by_service = st.sidebar.selectbox('Selecione o serviço para apresentar no gráfico', options = option_servicos)
 st.write('## Análise de Churn por serviços Inscritos')
 st.write('Filtragem por: ' + ', '.join(option_servicos))
-st.pyplot(churn_by_variable(dados, categoria_churn_by_service))
+st.pyplot(churn_by_variable(dados, categoria_churn_by_service, hue='Churn'))
 st.write('Ocorrência de churn para diferentes serviços: PhoneService (serviço de telefone), MultipleLines (múltiplas linhas telefônicas), InternetService (serviço de internet), OnlineSecurity (segurança online), OnlineBackup (backup online), DeviceProtection (proteção de dispositivo), TechSupport (suporte técnico), StreamingTV (transmissão de TV) e StreamingMovies (transmissão de filmes).')
 
 # Gráfico: Meses de Permanência
