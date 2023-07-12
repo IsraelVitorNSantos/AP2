@@ -20,6 +20,7 @@ dados['TotalCharges'] = dados['TotalCharges'].astype(float)
 mediana = sts.median(dados['TotalCharges'])
 dados['TotalCharges'].fillna(mediana, inplace=True)
 
+dados['SeniorCitizen'] = dados['SeniorCitizen'].map({'1': 'Is Senior', '0': 'Not Senior'})
 
 st.title('Trabalho Final – OSEMN\n')
 st.write('Trabalho desenvolvido utilizando a metodologia **OSEMN**, composta pelas etapas: **O**btain, **S**crub, **E**xplore, **M**odel e i**N**terpret. Essa metodologia é aplicada para solucionar problemas em ciência de dados, seguindo um conjunto de etapas recomendadas para o desenvolvimento da solução.')

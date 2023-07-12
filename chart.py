@@ -23,6 +23,7 @@ def plot_annotate(ax, title):
 def churn_by_variable(dataframe, option, size=(10, 6), hue=None):
     fig, ax = plt.subplots(figsize=size)
     sns.countplot(x=option, data=dataframe, palette="viridis", hue=hue)
+    ax.legend(["Not Churn", "Churn"], loc='upper right')
     plot_annotate(ax, option)
 
     return fig
